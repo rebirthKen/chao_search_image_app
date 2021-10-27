@@ -29,6 +29,7 @@ class ViewModelAdapter: BaseListAdapter<ImageResult, ImageViewHolder>() {
         val item = getItem(position) as ImageResult
 
         holder.binding.imageView.load(getUrl(item))
+        holder.binding.title.text = item.title
         holder.binding.root.setOnLongClickListener {
             listener?.longClickListener(item.id, getUrl(item), item.title)
             true
